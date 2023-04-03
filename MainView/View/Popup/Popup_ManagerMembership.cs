@@ -19,5 +19,9 @@ namespace BookManagerSystem
         }
 
         public static DialogResult fsShow(IWin32Window p_oOwner)
+        {
+
+            return DialogResult.Cancel;
+        }
     }
 }
