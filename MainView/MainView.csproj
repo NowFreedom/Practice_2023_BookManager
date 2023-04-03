@@ -51,9 +51,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Top\CTopManager.cs" />
+    <Compile Include="Top\Abstract\AManagmerInfo.cs" />
+    <Compile Include="Top\Abstract\AManager.cs" />
+    <Compile Include="Top\Interface\IBaseFunc.cs" />
     <Compile Include="Top\Manager\DataInformation\CManagerInfo.cs" />
-    <Compile Include="Top\Manager\DataInformation\CMainDataInfo.cs" />
     <Compile Include="View\Popup\Popup_ManagerMembership.cs">
       <SubType>Form</SubType>
     </Compile>

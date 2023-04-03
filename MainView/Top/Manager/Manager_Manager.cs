@@ -8,7 +8,7 @@ using System.IO;
 
 namespace BookManagerSystem
 {
-    public class CMannager_Manager
+    public class CMannager_Manager : AManager
     {
         public string ptGetPath                         { get; private set; } = string.Empty;
         public CManagerInfo_Update ptGetManagerData     { get; private set; } = null;
@@ -21,7 +21,7 @@ namespace BookManagerSystem
             this.m_oManagerList = new PManagerList();
         }
 
-        public bool fnCreateData()
+        public override bool fnCreateData()
         {
             try
             {
@@ -32,7 +32,11 @@ namespace BookManagerSystem
                         if(this.ptGetManagerData == null)
                         {
                             this.ptGetManagerData = new CManagerInfo_Update(m_oManagerList);
-                            return true;
+
+                            if(this.ptGetManagerData.fnSetInit())
+                            {
+                                return true;
+                            }
                         }
                     }
                 }
@@ -46,60 +50,68 @@ namespace BookManagerSystem
             }
         }
 
-        public bool fnLogin_InfoCheck(string p_sID, string p_sPassWord)
+        public override bool fnGetFindByKey(string p_sKey, out object p_oGetData)
         {
-            if(this.ptGetManagerData.ptGetManagerDic.Count > 0)
-            {
-                foreach (var oItem in this.ptGetManagerData.ptGetManagerDic.Values)
-                {
-                    if(oItem.ptGetManagerInfo.ptPetManagerItem.ptPetID          == p_sID.Trim() &&
-                       oItem.ptGetManagerInfo.ptPetManagerItem.ptPetPassword    == p_sPassWord.Trim())
-                    {
-                        return true;
-                    }
-                }
-            }
-
-            return false;
-        }
-
-        public bool fnGetFindDataInfo(string p_sVal, out CManagerItemInfo p_oManagerItemInfo)
-        {
-            p_oManagerItemInfo = null;
+            p_oGetData = null;
+                
+            if(!this.ptGetManagerData.ptGetManagerDic.ContainsKey(p_sKey)) { return false; }
 
             if(this.ptGetManagerData.ptGetManagerDic.Count > 0)
             {
                 //....
-                foreach (var oItem in this.ptGetManagerData.ptGetManagerDic.Keys)
+                foreach (var sItem in this.ptGetManagerData.ptGetManagerDic.Keys)
                 {
-                    if(p_sVal.Trim() == oItem)
+                    if(sItem == p_sKey)
                     {
-                        if(this.ptGetManagerData.ptGetManagerDic.TryGetValue(oItem, out var p_oObject))
-                        {
-                            p_oManagerItemInfo = new CManagerItemInfo(p_oObject.ptGetManagerInfo);
-                            return true;
-                        }
-                    }
-                }
-
-                //....Value 값으로 Key 찾기
-                foreach (var oItem in this.ptGetManagerData.ptGetManagerDic.Values)
-                {
-                    if(oItem.ptGetManagerInfo.ptPetManagerItem.ptPetCode        == p_sVal ||
-                       oItem.ptGetManagerInfo.ptPetManagerItem.ptPetID          == p_sVal ||
-                       oItem.ptGetManagerInfo.ptPetManagerItem.ptPetManagerName == p_sVal ||
-                       oItem.ptGetManagerInfo.ptPetManagerItem.ptPetPassword    == p_sVal ||
-                       oItem.ptGetManagerInfo.ptPetManagerItem.ptPetPhone       == p_sVal)
-                    {
-                        p_oManagerItemInfo = new CManagerItemInfo(oItem.ptGetManagerInfo);
+                        p_oGetData = ptGetManagerData.ptGetManagerDic[p_sKey].ptGetManagerInfo;
                         return true;
                     }
                 }
-
             }
 
             return false;
-
         }
+
+        public override bool fnGetFindByValue(string p_sVal, out object p_oGetData)
+        {
+            p_oGetData = null;
+
+            foreach (var oitem in this.ptGetManagerData.ptGetManagerDic.Values)
+            {
+                if(oitem.ptGetManagerInfo.ptPetManagerItem.ptPetCode        == p_sVal ||
+                   oitem.ptGetManagerInfo.ptPetManagerItem.ptPetEndDate     == p_sVal ||
+                   oitem.ptGetManagerInfo.ptPetManagerItem.ptPetID          == p_sVal ||
+                   oitem.ptGetManagerInfo.ptPetManagerItem.ptPetLevel       == p_sVal ||
+                   oitem.ptGetManagerInfo.ptPetManagerItem.ptPetManagerName == p_sVal ||
+                   oitem.ptGetManagerInfo.ptPetManagerItem.ptPetPassword    == p_sVal ||
+                   oitem.ptGetManagerInfo.ptPetManagerItem.ptPetPhone       == p_sVal ||
+                   oitem.ptGetManagerInfo.ptPetManagerItem.ptPetStartDate   == p_sVal)
+                {
+                    p_oGetData = oitem.ptGetManagerInfo;
+                    return true;
+                }
+            }
+
+            return false;
+        }
+
+        public bool fnLogin_InfoCheck(string p_sID, string p_sPassWord)
+        {
+            if (this.ptGetManagerData.ptGetManagerDic.Count > 0)
+            {
+                foreach (var oItem in this.ptGetManagerData.ptGetManagerDic.Values)
+                {
+                    if (oItem.ptGetManagerInfo.ptPetManagerItem.ptPetID         == p_sID.Trim() &&
+                        oItem.ptGetManagerInfo.ptPetManagerItem.ptPetPassword   == p_sPassWord.Trim())
+                    {
+                        return true;
+                    }
+                }
+            }
+
+            return false;
+        }
+
+        
     }
 }

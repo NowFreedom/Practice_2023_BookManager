@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Popup_ManagerMembership));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
@@ -51,8 +52,8 @@
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.ColumnCount = 3;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 184F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 325F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 161F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 236F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.Controls.Add(this.textBox1, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.textBox2, 0, 1);
@@ -73,7 +74,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 53F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(519, 211);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(398, 211);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // textBox1
@@ -85,7 +86,7 @@
             this.textBox1.Location = new System.Drawing.Point(3, 3);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(178, 34);
+            this.textBox1.Size = new System.Drawing.Size(155, 34);
             this.textBox1.TabIndex = 0;
             this.textBox1.Text = "Name :";
             this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -99,7 +100,7 @@
             this.textBox2.Location = new System.Drawing.Point(3, 43);
             this.textBox2.Multiline = true;
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(178, 34);
+            this.textBox2.Size = new System.Drawing.Size(155, 34);
             this.textBox2.TabIndex = 1;
             this.textBox2.Text = "ID :";
             this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -113,7 +114,7 @@
             this.textBox3.Location = new System.Drawing.Point(3, 83);
             this.textBox3.Multiline = true;
             this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(178, 34);
+            this.textBox3.Size = new System.Drawing.Size(155, 34);
             this.textBox3.TabIndex = 2;
             this.textBox3.Text = "Password :";
             this.textBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -127,7 +128,7 @@
             this.textBox4.Location = new System.Drawing.Point(3, 123);
             this.textBox4.Multiline = true;
             this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(178, 34);
+            this.textBox4.Size = new System.Drawing.Size(155, 34);
             this.textBox4.TabIndex = 3;
             this.textBox4.Text = "Phone :";
             this.textBox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -136,48 +137,48 @@
             // 
             this.txtName.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtName.EditValue = "";
-            this.txtName.Location = new System.Drawing.Point(187, 3);
+            this.txtName.Location = new System.Drawing.Point(164, 3);
             this.txtName.Name = "txtName";
             this.txtName.Properties.Appearance.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtName.Properties.Appearance.Options.UseFont = true;
             this.txtName.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.txtName.Size = new System.Drawing.Size(319, 34);
+            this.txtName.Size = new System.Drawing.Size(230, 34);
             this.txtName.TabIndex = 4;
             // 
             // txtID
             // 
             this.txtID.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtID.EditValue = "";
-            this.txtID.Location = new System.Drawing.Point(187, 43);
+            this.txtID.Location = new System.Drawing.Point(164, 43);
             this.txtID.Name = "txtID";
             this.txtID.Properties.Appearance.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtID.Properties.Appearance.Options.UseFont = true;
             this.txtID.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.txtID.Size = new System.Drawing.Size(319, 34);
+            this.txtID.Size = new System.Drawing.Size(230, 34);
             this.txtID.TabIndex = 5;
             // 
             // txtPassword
             // 
             this.txtPassword.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtPassword.EditValue = "";
-            this.txtPassword.Location = new System.Drawing.Point(187, 83);
+            this.txtPassword.Location = new System.Drawing.Point(164, 83);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Properties.Appearance.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPassword.Properties.Appearance.Options.UseFont = true;
             this.txtPassword.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.txtPassword.Size = new System.Drawing.Size(319, 34);
+            this.txtPassword.Size = new System.Drawing.Size(230, 34);
             this.txtPassword.TabIndex = 6;
             // 
             // txtPhone
             // 
             this.txtPhone.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtPhone.EditValue = "";
-            this.txtPhone.Location = new System.Drawing.Point(187, 123);
+            this.txtPhone.Location = new System.Drawing.Point(164, 123);
             this.txtPhone.Name = "txtPhone";
             this.txtPhone.Properties.Appearance.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPhone.Properties.Appearance.Options.UseFont = true;
             this.txtPhone.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.txtPhone.Size = new System.Drawing.Size(319, 34);
+            this.txtPhone.Size = new System.Drawing.Size(230, 34);
             this.txtPhone.TabIndex = 7;
             // 
             // tableLayoutPanel2
@@ -194,7 +195,7 @@
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(503, 47);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(391, 47);
             this.tableLayoutPanel2.TabIndex = 8;
             // 
             // btnCancel
@@ -204,9 +205,10 @@
             this.btnCancel.Appearance.Options.UseFont = true;
             this.btnCancel.Appearance.Options.UseForeColor = true;
             this.btnCancel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnCancel.Location = new System.Drawing.Point(254, 3);
+            this.btnCancel.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnCancel.ImageOptions.SvgImage")));
+            this.btnCancel.Location = new System.Drawing.Point(198, 3);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(246, 41);
+            this.btnCancel.Size = new System.Drawing.Size(190, 41);
             this.btnCancel.TabIndex = 1;
             this.btnCancel.Text = "Cancel";
             // 
@@ -215,17 +217,19 @@
             this.btnCreate.Appearance.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCreate.Appearance.Options.UseFont = true;
             this.btnCreate.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnCreate.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnCreate.ImageOptions.SvgImage")));
             this.btnCreate.Location = new System.Drawing.Point(3, 3);
             this.btnCreate.Name = "btnCreate";
-            this.btnCreate.Size = new System.Drawing.Size(245, 41);
+            this.btnCreate.Size = new System.Drawing.Size(189, 41);
             this.btnCreate.TabIndex = 0;
             this.btnCreate.Text = "Create";
+            this.btnCreate.Click += new System.EventHandler(this.btnCreate_Click);
             // 
             // Popup_ManagerMembership
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(519, 211);
+            this.ClientSize = new System.Drawing.Size(398, 211);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "Popup_ManagerMembership";
             this.ShowIcon = false;

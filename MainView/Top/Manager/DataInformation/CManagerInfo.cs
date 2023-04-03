@@ -17,12 +17,12 @@ namespace BookManagerSystem
         }
     }
 
-    public class CManagerInfo_Update
+    public class CManagerInfo_Update : AManagerInfo
     {
         public PManagerList ptGetManagerList                        { get; private set; }
         public Dictionary<string, CManagerItemInfo> ptGetManagerDic { get; private set; } = null; // Key : ID
 
-        public int ptGetListCount                                   { get; private  set; }
+        public int ptGetManagerCount                                { get; private  set; } = 0;
 
         public CManagerInfo_Update(PManagerList p_oManagerList)
         {
@@ -34,18 +34,18 @@ namespace BookManagerSystem
             }
         }
 
-        public bool fnSetInit()
+        public override bool fnSetInit()
         {
             try
             {
                 if(this.ptGetManagerList.ptPetManagerList.Count > 0)
                 {
-                    if(this.ptGetListCount != 0) { this.ptGetListCount = 0; }
+                    if(this.ptGetManagerCount != 0) { this.ptGetManagerCount = 0; }
 
                     foreach (var oItem in this.ptGetManagerList.ptPetManagerList)
                     {
-                        this.ptGetManagerDic.Add(oItem.ptPetManagerItem.ptPetCode, new CManagerItemInfo(oItem));
-                        ptGetListCount++;
+                        this.ptGetManagerDic.Add(oItem.ptPetManagerItem.ptPetID, new CManagerItemInfo(oItem));
+                        ptGetManagerCount++;
                     }
                 }
                 else
